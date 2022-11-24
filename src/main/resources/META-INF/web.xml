@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="4.0"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+    <session-config>
+        <cookie-config>
+            <http-only>true</http-only>
+        </cookie-config>
+        <tracking-mode>COOKIE</tracking-mode>
+    </session-config>
+
+    <welcome-file-list>
+        <welcome-file>/index.xhtml</welcome-file>
+    </welcome-file-list>
+
+    <context-param>
+        <param-name>javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <param-name>javax.faces.ENABLE_WEBSOCKET_ENDPOINT</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <param-name>javax.faces.FACELETS_BUFFER_SIZE</param-name>
+        <param-value>256000
+        </param-value> <!-- 250 kB, so that the AjaxExceptionHandler has chance to reset the response when an exception occurs during render response phase. -->
+    </context-param>
+    <context-param>
+        <param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
+        <param-value>true
+        </param-value> <!-- Prevent comments from evaluating any EL expressions and ending up in generated HTML output. -->
+    </context-param>
+    <context-param>
+        <param-name>javax.faces.DATETIMECONVERTER_DEFAULT_TIMEZONE_IS_SYSTEM_TIMEZONE</param-name>
+        <param-value>true</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>org.apache.myfaces.CHECK_ID_PRODUCTION_MODE</param-name>
+        <param-value>false</param-value>
+    </context-param>
+    <context-param>
+        <param-name>org.apache.myfaces.EARLY_FLUSH_ENABLED</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <param-name>org.apache.myfaces.NUMBER_OF_VIEWS_IN_SESSION</param-name>
+        <param-value>25</param-value>
+    </context-param>
+    <context-param>
+        <param-name>org.apache.myfaces.NUMBER_OF_SEQUENTIAL_VIEWS_IN_SESSION</param-name>
+        <param-value>20</param-value>
+    </context-param>
+    <context-param>
+        <param-name>org.apache.myfaces.COMPONENT_UNIQUE_IDS_CACHE_SIZE</param-name>
+        <param-value>500</param-value>
+    </context-param>
+    <context-param>
+        <param-name>org.apache.myfaces.USE_LAMBDA_METAFACTORY</param-name>
+        <param-value>false</param-value>
+    </context-param>
+
+    <!-- Starting JSF -->
+    <servlet>
+        <servlet-name>facesServlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>facesServlet</servlet-name>
+        <url-pattern>*.xhtml</url-pattern>
+    </servlet-mapping>
+</web-app>

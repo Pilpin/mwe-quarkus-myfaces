@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <f:facet name="first">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="robots" content="noindex"/>
+    </f:facet>
+    <title>Index</title>
+</h:head>
+
+<h:body style="display: grid; grid-template-columns: 1fr; gap: 5px;">
+    <h:outputText value="PROJECT_STAGE: #{initParam['javax.faces.PROJECT_STAGE']}" style=""/>
+    <h:outputText value="NUMBER_OF_VIEWS_IN_SESSION: #{initParam['org.apache.myfaces.NUMBER_OF_VIEWS_IN_SESSION']}" style="" />
+    <h:outputText value="NUMBER_OF_SEQUENTIAL_VIEWS_IN_SESSION: #{initParam['org.apache.myfaces.NUMBER_OF_SEQUENTIAL_VIEWS_IN_SESSION']}" style="" />
+    <h:outputText value="USE_LAMBDA_METAFACTORY: #{initParam['org.apache.myfaces.USE_LAMBDA_METAFACTORY']}" style="" />
+    <h:outputText value="EARLY_FLUSH_ENABLED: #{initParam['org.apache.myfaces.EARLY_FLUSH_ENABLED']}" style="" />
+</h:body>
+</html>
